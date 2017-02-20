@@ -5,6 +5,6 @@ start:
 		npm run babel-node -- src/bin/brain-games.js
 
 publish:
-		npm pushlish
-		
+		npm publish
+
 .PHONY: install start publish
