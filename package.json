@@ -25,6 +25,6 @@
     "brain-games": "dist/bin/brain-games.js"
   },
   "dependencies": {
-    "readline-sync": "^1.4.6",
+    "readline-sync": "^1.4.6"
   }
 }
