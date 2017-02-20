@@ -1,12 +1,12 @@
 {
   "name": "ofitserov-first-try",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "",
   "main": "brain-games.js",
   "scripts": {
     "babel-node": "babel-node",
-    "build" : "NODE_ENV=production babel src --out-dir dist --source-maps inline",
-    "prepublish" : "npm run build"
+    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
+    "prepublish": "npm run build"
   },
   "author": "Vladimir Ofitserov",
   "license": "ISC",
@@ -17,6 +17,9 @@
     "babel-preset-stage-0": "^6.22.0"
   },
   "bin": {
-   "brain-games": "dist/bin/brain-games.js"
- }
+    "brain-games": "dist/bin/brain-games.js"
+  },
+  "dependencies": {
+    "readline-sync": "^1.4.6"
+  }
 }
