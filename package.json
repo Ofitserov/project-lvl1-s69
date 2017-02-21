@@ -1,6 +1,6 @@
 {
   "name": "ofitserov-first-try",
-  "version": "0.3.0",
+  "version": "0.5.0",
   "description": "",
   "main": "brain-games.js",
   "scripts": {
@@ -22,7 +22,8 @@
     "eslint-plugin-import": "^2.2.0"
   },
   "bin": {
-    "brain-games": "dist/bin/brain-games.js"
+    "brain-games": "dist/bin/brain-games.js",
+    "brain-even": "dist/bin/brain-even.js"
   },
   "dependencies": {
     "readline-sync": "^1.4.6"

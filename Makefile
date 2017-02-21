@@ -10,4 +10,7 @@ publish:
 lint:
 		npm run eslint src/
 
+even:
+		npm run babel-node -- src/bin/brain-even.js
+
 .PHONY: install start publish lint
