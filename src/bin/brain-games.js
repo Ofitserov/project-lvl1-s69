@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import sayHello from '..';
+import { getUserName } from './../game-logic';
 
-sayHello();
+getUserName();

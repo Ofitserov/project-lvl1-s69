@@ -1,6 +1,6 @@
 {
   "name": "ofitserov-first-try",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "",
   "main": "brain-games.js",
   "scripts": {
@@ -23,9 +23,11 @@
   },
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
-    "brain-even": "dist/bin/brain-even.js"
+    "brain-even": "dist/bin/brain-even.js",
+    "brain-calc": "dist/bin/brain-calc.js"
   },
   "dependencies": {
+    "hexlet-pairs": "^0.1.4",
     "readline-sync": "^1.4.6"
   }
 }
