@@ -22,7 +22,7 @@ export default (rules, playGame) => {
   const iter = (acc) => {
     const game = playGame(acc);
     const question = getQuestion(game);
-    const correctAnswer = getCorrectAnswer(game);
+    const correctAnswer = `${getCorrectAnswer(game)}`;
     const userAnswer = readlineSync.question(`Question: ${question}`);
     const showAnswer = () => {
       console.log(`Your answer: ${userAnswer}`);

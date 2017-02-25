@@ -15,6 +15,6 @@ export const playGame = () => {
   const a = getRandomInt();
   const b = getRandomInt();
   const question = `${a} ${b}`;
-  const correctAnswer = `${gcd(a, b)}`;
+  const correctAnswer = gcd(a, b);
   return makeGame(question, correctAnswer);
 };
