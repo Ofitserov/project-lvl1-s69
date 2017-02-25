@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { userAnswer, correctAnswer } from './lib/make-game';
+import { getQuestion, getCorrectAnswer } from './lib/make-game';
 
 const showRules = (rules) => {
   console.log(rules);
@@ -11,7 +11,7 @@ const getUserName = () => {
   return userName;
 };
 
-export default (rules, game) => {
+export default (rules, playGame) => {
   console.log('Welcome to the Brain Games!');
   if (rules) {
     showRules(rules);
@@ -20,14 +20,15 @@ export default (rules, game) => {
   const userName = getUserName();
 
   const iter = (acc) => {
-    const gameData = game(acc);
-    const answer = userAnswer(gameData);
-    const trueAnswer = correctAnswer(gameData);
+    const game = playGame(acc);
+    const question = getQuestion(game);
+    const correctAnswer = getCorrectAnswer(game);
+    const userAnswer = readlineSync.question(`Question: ${question}`);
     const showAnswer = () => {
-      console.log(`Your answer: ${answer}`);
+      console.log(`Your answer: ${userAnswer}`);
       console.log('Correct!');
     };
-    if (answer === trueAnswer) {
+    if (userAnswer === correctAnswer) {
       if (acc >= 3) {
         showAnswer();
         console.log(`Congratulations, ${userName}!`);
@@ -36,11 +37,11 @@ export default (rules, game) => {
       showAnswer();
       return iter(acc + 1);
     }
-    console.log(`${answer} is wrong answer ;(. Correct answer was ${trueAnswer}. Lets try again, ${userName}!`);
+    console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}. Lets try again, ${userName}!`);
     return 0;
   };
 
-  if (game) {
+  if (playGame) {
     return iter(1);
   }
   return 0;

@@ -1,4 +1,3 @@
-import readlineSync from 'readline-sync';
 import { makeGame } from '../lib/make-game';
 
 export const rules = 'Find the greatest common divisor of given numbers.';
@@ -12,11 +11,10 @@ const gcd = (a, b) => {
   return gcd(b, a % b);
 };
 
-export const game = () => {
+export const playGame = () => {
   const a = getRandomInt();
   const b = getRandomInt();
-  const generateQuestion = `${a} ${b}`;
-  const userAnswer = readlineSync.question(`Question: ${generateQuestion}`);
+  const question = `${a} ${b}`;
   const correctAnswer = gcd(a, b);
-  return makeGame(userAnswer, correctAnswer);
+  return makeGame(question, correctAnswer);
 };

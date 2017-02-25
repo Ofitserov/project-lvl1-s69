@@ -1,7 +1,7 @@
 import * as pairs from 'hexlet-pairs';
 
-export const makeGame = (userAnswer, correctAnswer) => pairs.cons(userAnswer, correctAnswer);
+export const makeGame = (question, correctAnswer) => pairs.cons(question, correctAnswer);
 
-export const userAnswer = game => pairs.car(game);
+export const getQuestion = game => pairs.car(game);
 
-export const correctAnswer = game => pairs.cdr(game);
+export const getCorrectAnswer = game => pairs.cdr(game);

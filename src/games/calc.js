@@ -1,4 +1,3 @@
-import readlineSync from 'readline-sync';
 import { makeGame } from '../lib/make-game';
 
 export const rules = 'What is the result of the expression?';
@@ -30,12 +29,11 @@ const calc = (arg1, arg2, operation) => {
   }
 };
 
-export const game = (acc) => {
+export const playGame = (acc) => {
   const arg1 = getRandomInt();
   const arg2 = getRandomInt();
   const operation = getOperation(acc);
-  const generateQuestion = `${arg1} ${operation} ${arg2}`;
-  const userAnswer = readlineSync.question(`Question: ${generateQuestion}`);
+  const question = `${arg1} ${operation} ${arg2}`;
   const correctAnswer = calc(arg1, arg2, operation);
-  return makeGame(userAnswer, correctAnswer);
+  return makeGame(question, correctAnswer);
 };
