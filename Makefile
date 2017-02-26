@@ -22,4 +22,7 @@ gcd:
 balance:
 		npm run babel-node -- src/bin/brain-balance.js
 
+prog:
+		npm run babel-node -- src/bin/brain-progression.js
+
 .PHONY: install start publish lint
