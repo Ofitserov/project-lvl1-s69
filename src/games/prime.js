@@ -4,7 +4,7 @@ export const rules = 'Answer "yes" if number simple otherwise answer "no".';
 
 const getRandomInt = () => Math.round(Math.random() * 100);
 
-const isSimple = (num) => {
+const isPrime = (num) => {
   const iter = (acc) => {
     if (num === acc) {
       return true;
@@ -19,6 +19,6 @@ const isSimple = (num) => {
 export const playGame = () => {
   const num = getRandomInt();
   const question = `${num}`;
-  const correctAnswer = isSimple(num) ? 'yes' : 'no';
+  const correctAnswer = isPrime(num) ? 'yes' : 'no';
   return makeGame(question, correctAnswer);
 };

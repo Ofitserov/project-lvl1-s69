@@ -9,8 +9,7 @@ const makeProgression = (start, step) => {
     if (acc.length === 10) {
       return acc;
     }
-    acc.push(current);
-    return iter(current + step, acc);
+    return iter(current + step, acc.concat(current));
   };
   return iter(start, []);
 };
