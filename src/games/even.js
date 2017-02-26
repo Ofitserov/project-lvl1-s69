@@ -7,7 +7,8 @@ const isEven = num => num % 2 === 0;
 const getRandomInt = () => Math.round(Math.random() * 100);
 
 export const playGame = () => {
-  const question = getRandomInt();
-  const correctAnswer = isEven(question) ? 'yes' : 'no';
+  const num = getRandomInt();
+  const question = `${num}`;
+  const correctAnswer = isEven(num) ? 'yes' : 'no';
   return makeGame(question, correctAnswer);
 };
