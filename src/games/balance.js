@@ -9,6 +9,20 @@ const sort = (num) => {
   return Number(str.split('').sort().join(''));
 };
 
+const rebalance = (num) => {
+  const str = String(num);
+  const arr = str.split('');
+  const length = arr.length - 1;
+  return arr.map((item, i) => {
+    if (i === 0) {
+      return Number(item) + 1;
+    } else if (i === length) {
+      return Number(item) - 1;
+    }
+    return Number(item);
+  }).join('');
+};
+
 const balance = (num) => {
   const sorted = sort(num);
   const str = String(sorted);
@@ -17,20 +31,11 @@ const balance = (num) => {
   if (str[length] - str[0] <= 1) {
     return sorted;
   }
-
-  let result = '';
-  for (let i = 0; i <= length; i += 1) {
-    if (i === 0) {
-      result += String(Number(str[i]) + 1);
-    } else if (i === length) {
-      result += String(Number(str[i] - 1));
-    } else {
-      result += str[i];
-    }
-  }
-  return balance(Number(result));
+  console.log(sorted);
+  const rebalanced = rebalance(sorted);
+  return balance(Number(rebalanced));
 };
-
+console.log(balance('4181'));
 export const playGame = () => {
   const num = getRandomInt();
   const question = `${num}`;
